@@ -81,5 +81,11 @@ public class LinkedList<T> {
         }
 
     }
+    
+     public void print(){
+        System.out.println(this.head.getElement().toString());
+        System.out.println(this.tail.getElement().toString());
+        System.out.println(this.count);
+    }
 
 }
