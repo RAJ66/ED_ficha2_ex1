@@ -27,6 +27,18 @@ public class Main {
         lista.add(pessoa2);
         
         lista.print();
+        
+        //teste remover item
+        lista.add(pessoa3);
+        lista.add(pessoa4);
+        
+        lista.print();
+        
+        lista.delete(pessoa3);
+        System.out.println("ver se esta bem xd");
+        lista.print();
+
+
 
     }
     

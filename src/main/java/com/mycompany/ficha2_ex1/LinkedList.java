@@ -65,26 +65,47 @@ public class LinkedList<T> {
         //caso esteja vazio
         if (count == 0) {
             System.out.println("Lista vazia");
-        }
-        if (count == 1) {
-            if (this.head.getElement().equals(novo)) {
-                this.head = null;
-                this.tail = null;
-            }
         } else {
 
-            //criar previous e current
             Node<T> previous = new Node<T>();
             Node<T> current = new Node<T>();
             
-            
+            if (novo.equals(this.head.getElement())) {
+                this.head=this.head.getNext();
+                this.count--;
+                System.out.println("item removido");
+            }else{
+                current = this.head.getNext();
+                previous = this.head;
+                
+                for(int i= 1;i<this.count;i++){
+                    if (novo.equals(current.getElement())) {
+                        previous.setNext(current.getNext());
+                        this.count--;
+                        System.out.println("item removido");
+                        break;// depois passar para variavel dependendo da opiniao do prof
+
+                    }else{
+                        previous=current;
+                        current= current.getNext();
+                    }
+            }
+            }
+
         }
 
     }
-    
-     public void print(){
-        System.out.println(this.head.getElement().toString());
-        System.out.println(this.tail.getElement().toString());
+
+    public void print() {
+        Node<T> current = new Node<T>();
+            current = this.head;
+        for (int i = 0; i < this.count; i++) {
+            System.out.println(current.getElement().toString());
+            current = current.getNext();
+            
+        }
+        
+        
         System.out.println(this.count);
     }
 
