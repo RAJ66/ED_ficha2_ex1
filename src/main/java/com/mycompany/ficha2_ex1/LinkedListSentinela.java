@@ -52,7 +52,26 @@ public class LinkedListSentinela<T>{
        newNode.setNext(this.head.getNext());
        this.head.setNext(newNode);
        this.count++;
-   }     
+   }    
+   
+   public void delete(T novo){
+       Node<T> previous = new Node<T>();
+       Node<T> current = new Node<T>();
+       
+       current=this.head.getNext();
+       previous=this.head;
+       
+       for (int i = 0; i < this.count; i++) {
+           if (current.getElement().equals(novo)) {
+               previous.setNext(current.getNext());
+               this.count--;
+               break;
+           }else{
+               previous=current;
+               current = current.getNext();
+           }
+       }
+   }
    
    public void print() {
         Node<T> current = new Node<T>();

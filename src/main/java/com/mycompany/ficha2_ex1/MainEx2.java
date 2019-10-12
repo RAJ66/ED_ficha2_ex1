@@ -21,10 +21,16 @@ public class MainEx2 {
         Pessoa pessoa3 = new Pessoa("Carlos", 21);
         Pessoa pessoa4 = new Pessoa("Joao", 21);
         
+        // teste de adicionar pessoas
         LinkedListSentinela lista = new LinkedListSentinela();
          lista.add(pessoa1);
         lista.add(pessoa2);
         
+        lista.print();
+        // testde de remover pessoas
+        lista.add(pessoa3);
+        lista.add(pessoa4);
+        lista.delete(pessoa4);
         lista.print();
         
     }
