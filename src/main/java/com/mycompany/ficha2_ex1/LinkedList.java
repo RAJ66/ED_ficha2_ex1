@@ -61,48 +61,48 @@ public class LinkedList<T> {
 
     }
 
-    public void delete(T novo) {
-        //caso esteja vazio
-        if (count == 0) {
-            System.out.println("Lista vazia");
-        } else {
-
-            Node<T> previous = new Node<T>();
-            Node<T> current = new Node<T>();
+     public void delete(T element){
+        boolean found = false;
+        if(this.count == 0){
+            System.out.println("Lista vazia!");
+        }
+        else{
+            Node<T> previous = new Node<>();
+            Node<T> current = new Node<>();
             
-            if (novo.equals(this.head.getElement())) {
-                this.head=this.head.getNext();
+            if(this.head.getElement().equals(element)){
+                this.head = this.head.getNext();
                 this.count--;
-                System.out.println("item removido");
-            }else{
+                System.out.println("Item removido!");
+            }
+            else{
                 current = this.head.getNext();
                 previous = this.head;
                 
-                for(int i= 1;i<this.count;i++){
-                    if (novo.equals(current.getElement())) {
+                while(current!=null && !found){
+                    if(current.getElement().equals(element)){
                         previous.setNext(current.getNext());
                         this.count--;
-                        System.out.println("item removido");
-                        break;// depois passar para variavel dependendo da opiniao do prof
-
-                    }else{
-                        previous=current;
-                        current= current.getNext();
+                        System.out.println("Item removido!");
+                        found = true;
                     }
-            }
-            }
-
+                    else{
+                        previous = current;
+                        current = current.getNext();
+                    }
+                }
+            } 
         }
-
     }
 
     public void print() {
         Node<T> current = new Node<T>();
             current = this.head;
-        for (int i = 0; i < this.count; i++) {
+       
+        
+        while(current!=null){
             System.out.println(current.getElement().toString());
             current = current.getNext();
-            
         }
         
         

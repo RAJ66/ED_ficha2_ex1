@@ -31,6 +31,7 @@ public class MainEx2 {
         lista.add(pessoa3);
         lista.add(pessoa4);
         lista.delete(pessoa4);
+        System.out.println("eliminar");
         lista.print();
         
     }

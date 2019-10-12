@@ -9,7 +9,8 @@ package com.mycompany.ficha2_ex1;
  *
  * @author vitor
  */
-public class LinkedListSentinela<T>{
+public class LinkedListSentinela<T> {
+
     private int count;
     private Node<T> head;
     private Node<T> tail;
@@ -18,7 +19,7 @@ public class LinkedListSentinela<T>{
         this.count = 0;
         this.head = new Node<>();
         this.tail = new Node<>();
-        
+
         this.head.setNext(this.tail);
     }
 
@@ -45,48 +46,48 @@ public class LinkedListSentinela<T>{
     public void setTail(Node<T> tail) {
         this.tail = tail;
     }
-    
-   public void add(T novo){
-       Node<T> newNode = new Node<T>(novo);
-       
-       newNode.setNext(this.head.getNext());
-       this.head.setNext(newNode);
-       this.count++;
-   }    
-   
-   public void delete(T novo){
-       Node<T> previous = new Node<T>();
-       Node<T> current = new Node<T>();
-       
-       current=this.head.getNext();
-       previous=this.head;
-       
-       for (int i = 0; i < this.count; i++) {
-           if (current.getElement().equals(novo)) {
-               previous.setNext(current.getNext());
-               this.count--;
-               break;
-           }else{
-               previous=current;
-               current = current.getNext();
-           }
-       }
-   }
-   
-   public void print() {
+
+    public void add(T novo) {
+        Node<T> newNode = new Node<T>(novo);
+
+        newNode.setNext(this.head.getNext());
+        this.head.setNext(newNode);
+        this.count++;
+    }
+
+    public void delete(T novo) {
+        boolean found = false;
+        Node<T> previous = new Node<T>();
         Node<T> current = new Node<T>();
-            current = this.head;
-        for (int i = 0; i < this.count+2; i++) {
-            if (current.getElement()==null) {
-                System.out.println("null");
-            }else{
-                System.out.println(current.getElement().toString());
+
+        current = this.head.getNext();
+        previous = this.head;
+
+        while (current != null && !found) {
+            if (current.getElement().equals(novo)) {
+                previous.setNext(current.getNext());
+                this.count--;
+                found = true;
+
+            } else {
+                previous = current;
+                current = current.getNext();
             }
-            current = current.getNext();
-            
         }
-        
-        
+
+    }
+
+    public void print() {
+        Node<T> current = new Node<>();
+        current = this.head.getNext();
+
+        while (current != this.tail) {
+
+            System.out.println(current.getElement().toString());
+
+            current = current.getNext();
+        }
+
         System.out.println(this.count);
     }
 
