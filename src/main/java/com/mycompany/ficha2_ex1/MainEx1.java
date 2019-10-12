@@ -9,7 +9,7 @@ package com.mycompany.ficha2_ex1;
  *
  * @author vitor
  */
-public class Main {
+public class MainEx1 {
 
     /**
      * @param args the command line arguments
