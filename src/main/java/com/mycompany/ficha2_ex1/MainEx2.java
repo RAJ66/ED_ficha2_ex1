@@ -22,7 +22,7 @@ public class MainEx2 {
         Pessoa pessoa4 = new Pessoa("Joao", 21);
         
         // teste de adicionar pessoas
-        LinkedListSentinela lista = new LinkedListSentinela();
+        LinkedListSentinela<Pessoa> lista = new LinkedListSentinela<>();
          lista.add(pessoa1);
         lista.add(pessoa2);
         

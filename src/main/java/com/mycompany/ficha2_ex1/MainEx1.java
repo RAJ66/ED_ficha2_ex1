@@ -21,21 +21,21 @@ public class MainEx1 {
         Pessoa pessoa3 = new Pessoa("Carlos", 21);
         Pessoa pessoa4 = new Pessoa("Joao", 21);
         
-        LinkedList lista = new LinkedList();
+        LinkedList<Pessoa> lista = new LinkedList<>();
         
         lista.add(pessoa1);
         lista.add(pessoa2);
         
-        lista.print();
+        //lista.print();
         
         //teste remover item
         lista.add(pessoa3);
         //lista.add(pessoa4);
         
-        lista.print();
+       // lista.print();
         
-        lista.delete(pessoa4);
-        System.out.println("ver se esta bem xd");
+        lista.delete(pessoa3);
+       
         lista.print();
 
 

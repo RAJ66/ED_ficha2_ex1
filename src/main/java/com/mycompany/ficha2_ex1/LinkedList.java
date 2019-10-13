@@ -66,21 +66,28 @@ public class LinkedList<T> {
             //eliminar agora
             if (found) {
                 if (previous == null) {
+                    if (this.count == 1) {
+                        this.tail = null;
+                    }
                     this.head = current.getNext();
-                    this.count--;
-                    return true;
                 } else {
                     previous.setNext(current.getNext());
-                    this.count--;
-                    return true;
                 }
-            }else{
+
+                if (current.equals(this.tail)) {
+                    this.tail = previous;
+                }
+
+                this.count--;
+                return true;
+
+            } else {
                 System.out.println("O item nao existe na lista");
                 return false;
             }
 
         }
-        
+
     }
 
     public void print() {
@@ -92,6 +99,14 @@ public class LinkedList<T> {
         }
 
         System.out.println(this.count);
+        
+        if (this.head !=null) {
+            System.out.println("head    "+this.head.getElement().toString());
+        }
+        
+        if (this.tail !=null) {
+            System.out.println("tail    "+this.tail.getElement().toString());
+        }
     }
 
 }
