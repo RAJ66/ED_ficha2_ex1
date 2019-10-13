@@ -25,25 +25,6 @@ public class LinkedList<T> {
         return count;
     }
 
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public Node<T> getHead() {
-        return head;
-    }
-
-    public void setHead(Node<T> head) {
-        this.head = head;
-    }
-
-    public Node<T> getTail() {
-        return tail;
-    }
-
-    public void setTail(Node<T> tail) {
-        this.tail = tail;
-    }
 
     public void add(T novo) {
         Node<T> newNode = new Node<T>(novo);
