@@ -30,11 +30,11 @@ public class MainEx1 {
         
         //teste remover item
         lista.add(pessoa3);
-        lista.add(pessoa4);
+        //lista.add(pessoa4);
         
         lista.print();
         
-        lista.delete(pessoa3);
+        lista.delete(pessoa4);
         System.out.println("ver se esta bem xd");
         lista.print();
 

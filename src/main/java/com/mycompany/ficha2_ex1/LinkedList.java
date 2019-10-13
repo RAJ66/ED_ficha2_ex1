@@ -25,7 +25,6 @@ public class LinkedList<T> {
         return count;
     }
 
-
     public void add(T novo) {
         Node<T> newNode = new Node<T>(novo);
 
@@ -42,49 +41,56 @@ public class LinkedList<T> {
 
     }
 
-     public void delete(T element){
-        boolean found = false;
-        if(this.count == 0){
+    public boolean delete(T element) {
+
+        if (this.count == 0) {
             System.out.println("Lista vazia!");
-        }
-        else{
-            Node<T> previous = new Node<>();
-            Node<T> current = new Node<>();
-            
-            if(this.head.getElement().equals(element)){
-                this.head = this.head.getNext();
-                this.count--;
-                System.out.println("Item removido!");
-            }
-            else{
-                current = this.head.getNext();
-                previous = this.head;
-                
-                while(current!=null && !found){
-                    if(current.getElement().equals(element)){
-                        previous.setNext(current.getNext());
-                        this.count--;
-                        System.out.println("Item removido!");
-                        found = true;
-                    }
-                    else{
-                        previous = current;
-                        current = current.getNext();
-                    }
+            return false;
+        } else {
+            //pre whlie
+            Node<T> previous, current;
+            previous = null;
+            current = this.head;
+            boolean found = false;
+
+            //ciclo
+            while (current != null && !found) {
+                if (current.getElement().equals(element)) {
+                    found = true;
+                } else {
+                    previous = current;
+                    current = current.getNext();
                 }
-            } 
+            }
+
+            //eliminar agora
+            if (found) {
+                if (previous == null) {
+                    this.head = current.getNext();
+                    this.count--;
+                    return true;
+                } else {
+                    previous.setNext(current.getNext());
+                    this.count--;
+                    return true;
+                }
+            }else{
+                System.out.println("O item nao existe na lista");
+                return false;
+            }
+
         }
+        
     }
 
     public void print() {
-         Node<T> current    = this.head;
-        
-        while(current!=null){
+        Node<T> current = this.head;
+
+        while (current != null) {
             System.out.println(current.getElement().toString());
             current = current.getNext();
         }
-        
-        
+
         System.out.println(this.count);
     }
 
