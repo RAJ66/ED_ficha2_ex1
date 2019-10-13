@@ -26,10 +26,10 @@ public class MainEx2 {
          lista.add(pessoa1);
         lista.add(pessoa2);
         
-        lista.print();
+        //lista.print();
         // testde de remover pessoas
         lista.add(pessoa3);
-        lista.add(pessoa4);
+        //lista.add(pessoa4);
         lista.delete(pessoa4);
         System.out.println("eliminar");
         lista.print();

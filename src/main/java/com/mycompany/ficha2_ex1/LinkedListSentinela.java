@@ -17,8 +17,8 @@ public class LinkedListSentinela<T> {
 
     public LinkedListSentinela() {
         this.count = 0;
-        this.head = new Node<>();
-        this.tail = new Node<>();
+        this.head = new Node<>(null);
+        this.tail = new Node<>(null);
 
         this.head.setNext(this.tail);
     }
@@ -27,25 +27,7 @@ public class LinkedListSentinela<T> {
         return count;
     }
 
-    public void setCount(int count) {
-        this.count = count;
-    }
 
-    public Node<T> getHead() {
-        return head;
-    }
-
-    public void setHead(Node<T> head) {
-        this.head = head;
-    }
-
-    public Node<T> getTail() {
-        return tail;
-    }
-
-    public void setTail(Node<T> tail) {
-        this.tail = tail;
-    }
 
     public void add(T novo) {
         Node<T> newNode = new Node<T>(novo);
@@ -55,31 +37,33 @@ public class LinkedListSentinela<T> {
         this.count++;
     }
 
-    public void delete(T novo) {
+    public boolean delete(T novo) {
         boolean found = false;
-        Node<T> previous = new Node<T>();
-        Node<T> current = new Node<T>();
+        Node<T> previous = this.head;
+        Node<T> current =this.head.getNext();
 
-        current = this.head.getNext();
-        previous = this.head;
+        
 
-        while (current != null && !found) {
+        while (current.getElement() != null ) {
             if (current.getElement().equals(novo)) {
                 previous.setNext(current.getNext());
                 this.count--;
-                found = true;
+                return true;
 
             } else {
                 previous = current;
                 current = current.getNext();
             }
         }
+        
+        return false;
+        
+        
 
     }
 
     public void print() {
-        Node<T> current = new Node<>();
-        current = this.head.getNext();
+         Node<T> current = this.head.getNext();
 
         while (current != this.tail) {
 
