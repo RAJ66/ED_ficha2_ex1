@@ -77,9 +77,7 @@ public class LinkedList<T> {
     }
 
     public void print() {
-        Node<T> current = new Node<T>();
-            current = this.head;
-       
+         Node<T> current    = this.head;
         
         while(current!=null){
             System.out.println(current.getElement().toString());
