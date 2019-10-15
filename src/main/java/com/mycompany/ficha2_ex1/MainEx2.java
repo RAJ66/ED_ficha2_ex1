@@ -25,10 +25,14 @@ public class MainEx2 {
         LinkedListSentinela<Pessoa> lista = new LinkedListSentinela<>();
          lista.add(pessoa1);
         lista.add(pessoa2);
+                lista.add(pessoa3);
+        lista.add(pessoa4);
+        lista.print();
+
         
         //lista.print();
         // testde de remover pessoas
-        lista.add(pessoa3);
+        //lista.add(pessoa3);
         //lista.add(pessoa4);
         lista.remove(pessoa4);
         System.out.println("eliminar");
