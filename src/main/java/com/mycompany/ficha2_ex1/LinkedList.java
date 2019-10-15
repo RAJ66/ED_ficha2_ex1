@@ -11,50 +11,66 @@ package com.mycompany.ficha2_ex1;
  */
 public class LinkedList<T> {
 
+   /**
+     * count - variável com o número de elementos na lista head - Node que
+     * aponta para o head da lista tail - Node que aponta para a tail da lista
+     */
     private int count;
     private Node<T> head;
     private Node<T> tail;
 
+    /**
+     * Método construtor inicializa o count a 0 e head e tail a null
+     */
     public LinkedList() {
         this.count = 0;
         this.head = null;
         this.tail = null;
     }
 
+    /**
+     *
+     * @return o número de elementos na lista
+     */
     public int getCount() {
         return count;
     }
 
-    public void add(T novo) {
-        Node<T> newNode = new Node<T>(novo);
+    /**
+     * Método que adiciona um elemento na lista
+     *
+     * @param element - elemento a adicionar na lista
+     */
+    public void add(T element) {
+        Node<T> newNode = new Node<T>(element);
 
         if (this.count == 0) {
             this.head = newNode;
             this.tail = newNode;
-
         } else {
-            newNode.setNext(head);
+            newNode.setNext(this.head);
             this.head = newNode;
         }
-
         this.count++;
-
     }
 
+    /**
+     * Método que remove um elemento da lista
+     *
+     * @param element - elemento a remover da lista
+     * @return valor booleano conforme o sucesso e o insucesso do método
+     */
     public boolean remove(T element) {
-        
         boolean found = false;
 
-        // entra quando o lista esta vazia
+        //entra quando a lista está vazia
         if (this.count == 0) {
             return found;
         }
 
-        
-        Node<T> previous=null;
+        Node<T> previous = null;
         Node<T> current = this.head;
 
-        
         while (current != null && !found) {
             if (current.getElement().equals(element)) {
                 found = true;
@@ -64,7 +80,6 @@ public class LinkedList<T> {
             }
         }
 
-        
         if (found) {
             if (previous == null) {
                 if (this.count == 1) {
@@ -74,23 +89,21 @@ public class LinkedList<T> {
             } else {
                 previous.setNext(current.getNext());
             }
-
             if (current.equals(this.tail)) {
                 this.tail = previous;
             }
-
             this.count--;
             return found;
-
-        } else {
-            //entra quando o elemento a eliminar nao existe na lista
+        } //entra quando o elemento a eliminar nao existe
+        else {
             return found;
         }
 
     }
 
-    
-    
+    /**
+     * Método que imprime todos os elementos da lista
+     */
     public void print() {
         Node<T> current = this.head;
 
@@ -99,15 +112,13 @@ public class LinkedList<T> {
             current = current.getNext();
         }
 
-        System.out.println(this.count);
+        System.out.println("Número de elemntos na lista: " + this.count);
 
         if (this.head != null) {
-            System.out.println("head    " + this.head.getElement().toString());
+            System.out.println("Head: " + this.head.getElement().toString());
         }
-
         if (this.tail != null) {
-            System.out.println("tail    " + this.tail.getElement().toString());
+            System.out.println("Tail: " + this.tail.getElement().toString());
         }
     }
-
 }
