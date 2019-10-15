@@ -11,7 +11,7 @@ package com.mycompany.ficha2_ex1;
  */
 public class LinkedList<T> {
 
-   /**
+    /**
      * count - variável com o número de elementos na lista head - Node que
      * aponta para o head da lista tail - Node que aponta para a tail da lista
      */

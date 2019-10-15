@@ -30,22 +30,20 @@ public class MainEx2 {
         System.out.println("Teste de adicionar pessoas:");
         lista.print();
 
-       //teste remover uma instancia nao existente na lista
-        System.out.println("\nTeste remover uma instancia nao existente na lista, deve dar return false :"+lista.remove(pessoa4));
-        
+        //teste remover uma instancia nao existente na lista
+        System.out.println("\nTeste remover uma instancia nao existente na lista, deve dar return false :" + lista.remove(pessoa4));
+
         // teste de remover a primeira
-        System.out.println("\nTeste para remover a primeira, deve dar return true: "+lista.remove(pessoa3));
-        lista.print(); 
-        
-        // teste para remover a ultima
-       System.out.println("\nTeste para remover a ultima, deve dar return true: "+lista.remove(pessoa1));
-       lista.print();
-       
-       //teste para remover quando so existe um elemento na lista
-        System.out.println("\nTeste para remover quando so existe um elemento na lista, deve dar return true: "+lista.remove(pessoa2));
+        System.out.println("\nTeste para remover a primeira, deve dar return true: " + lista.remove(pessoa3));
         lista.print();
 
-        
+        // teste para remover a ultima
+        System.out.println("\nTeste para remover a ultima, deve dar return true: " + lista.remove(pessoa1));
+        lista.print();
+
+        //teste para remover quando so existe um elemento na lista
+        System.out.println("\nTeste para remover quando so existe um elemento na lista, deve dar return true: " + lista.remove(pessoa2));
+        lista.print();
 
     }
 

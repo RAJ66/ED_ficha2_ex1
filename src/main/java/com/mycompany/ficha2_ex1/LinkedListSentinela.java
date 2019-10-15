@@ -88,6 +88,5 @@ public class LinkedListSentinela<T> {
 
         System.out.println("Número de elementos na lista: " + this.count);
     }
-    
 
 }
