@@ -37,7 +37,7 @@ public class LinkedListSentinela<T> {
         this.count++;
     }
 
-    public boolean delete(T novo) {
+    public boolean remove(T novo) {
         boolean found = false;
         Node<T> previous = this.head;
         Node<T> current =this.head.getNext();

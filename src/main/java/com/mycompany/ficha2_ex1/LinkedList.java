@@ -41,55 +41,56 @@ public class LinkedList<T> {
 
     }
 
-    public boolean delete(T element) {
+    public boolean remove(T element) {
+        
+        boolean found = false;
 
+        // entra quando o lista esta vazia
         if (this.count == 0) {
-            System.out.println("Lista vazia!");
-            return false;
-        } else {
-            //pre whlie
-            Node<T> previous, current;
-            previous = null;
-            current = this.head;
-            boolean found = false;
+            return found;
+        }
 
-            //ciclo
-            while (current != null && !found) {
-                if (current.getElement().equals(element)) {
-                    found = true;
-                } else {
-                    previous = current;
-                    current = current.getNext();
-                }
-            }
+        
+        Node<T> previous=null;
+        Node<T> current = this.head;
 
-            //eliminar agora
-            if (found) {
-                if (previous == null) {
-                    if (this.count == 1) {
-                        this.tail = null;
-                    }
-                    this.head = current.getNext();
-                } else {
-                    previous.setNext(current.getNext());
-                }
-
-                if (current.equals(this.tail)) {
-                    this.tail = previous;
-                }
-
-                this.count--;
-                return true;
-
+        
+        while (current != null && !found) {
+            if (current.getElement().equals(element)) {
+                found = true;
             } else {
-                System.out.println("O item nao existe na lista");
-                return false;
+                previous = current;
+                current = current.getNext();
+            }
+        }
+
+        
+        if (found) {
+            if (previous == null) {
+                if (this.count == 1) {
+                    this.tail = null;
+                }
+                this.head = current.getNext();
+            } else {
+                previous.setNext(current.getNext());
             }
 
+            if (current.equals(this.tail)) {
+                this.tail = previous;
+            }
+
+            this.count--;
+            return found;
+
+        } else {
+            //entra quando o elemento a eliminar nao existe na lista
+            return found;
         }
 
     }
 
+    
+    
     public void print() {
         Node<T> current = this.head;
 
@@ -99,13 +100,13 @@ public class LinkedList<T> {
         }
 
         System.out.println(this.count);
-        
-        if (this.head !=null) {
-            System.out.println("head    "+this.head.getElement().toString());
+
+        if (this.head != null) {
+            System.out.println("head    " + this.head.getElement().toString());
         }
-        
-        if (this.tail !=null) {
-            System.out.println("tail    "+this.tail.getElement().toString());
+
+        if (this.tail != null) {
+            System.out.println("tail    " + this.tail.getElement().toString());
         }
     }
 

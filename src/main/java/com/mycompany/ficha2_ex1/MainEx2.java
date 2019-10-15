@@ -30,7 +30,7 @@ public class MainEx2 {
         // testde de remover pessoas
         lista.add(pessoa3);
         //lista.add(pessoa4);
-        lista.delete(pessoa4);
+        lista.remove(pessoa4);
         System.out.println("eliminar");
         lista.print();
         

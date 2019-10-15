@@ -34,7 +34,7 @@ public class MainEx1 {
         
        // lista.print();
         
-        lista.delete(pessoa3);
+        lista.remove(pessoa3);
        
         lista.print();
 
